@@ -6,8 +6,6 @@ services:
       POSTGRES_PASSWORD: temporal
       POSTGRES_USER: temporal
     image: postgres:${POSTGRESQL_VERSION}
-    #ports:
-    #  - 5432:5432
     expose:
       - 5432
     volumes:
@@ -24,8 +22,6 @@ services:
       - POSTGRES_SEEDS=postgresql
       - DYNAMIC_CONFIG_FILE_PATH=config/dynamicconfig/development-sql.yaml
     image: temporalio/auto-setup:${TEMPORAL_VERSION}
-    #ports:
-    #  - 7233:7233
     expose:
       - 7233
     volumes:
@@ -48,7 +44,5 @@ services:
       - TEMPORAL_ADDRESS=temporal:7233
       - TEMPORAL_CORS_ORIGINS=http://localhost:3000
     image: temporalio/ui:${TEMPORAL_UI_VERSION}
-    #ports:
-    #  - 18080:8080
     expose:
       - 8080
