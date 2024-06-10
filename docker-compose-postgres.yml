@@ -56,8 +56,8 @@ services:
     image: temporalio/ui:${TEMPORAL_UI_VERSION}
     networks:
       - temporal-network
-    ports:
-      - 18080:8080
+    #ports:
+    #  - 18080:8080
     expose:
       - 8080
 networks:
